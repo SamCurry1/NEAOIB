@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script>function myfunction() {
+            // get search bar element
+
+            const searchInput = document.getElementById("searchInput");
+
+
+
+            // store name elements in array-like object 
+
+            const namesFromDOM = document.getElementsByClassName("county");
+
+
+
+            // listen for user events 
+
+            searchInput.addEventListener("keyup", (event) => {
+
+                const { value } = event.target;
+
+
+
+                // get user search input converted to lowercase 
+
+                const searchQuery = value.toLowerCase();
+
+
+
+                for (const nameElement of namesFromDOM) {
+
+                    // store name text and convert to lowercase 
+
+                    let name = nameElement.textContent.toLowerCase();
+
+
+
+                    // compare current name to search input 
+
+                    if (name.includes(searchQuery)) {
+
+                        // found name matching search, display it 
+
+                        nameElement.style.display = "block";
+
+                    } else {
+
+                        // no match, don't display name 
+
+                        nameElement.style.display = "none";
+
+                    }
+
+                }
+
+            });
+
+        }</script>
+
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        #container {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 0px;
+            background: linear-gradient(to bottom, #6A706E 0%, #12664F 100%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+
+
+        #search {
+            display: flex;
+            padding: 20px;
+            background-color: #6A706E;
+        }
+
+
+
+            #search label {
+                font-size: 24px;
+                font-weight: bold;
+                margin-right: 15px;
+            }
+
+
+
+        #searchInput {
+            display: inherit;
+            width: 100%;
+            padding: 1em 1em;
+        }
+
+
+
+        #results {
+            display: block;
+            padding: 10px;
+        }
+
+
+
+            #results .name {
+                width: 100%;
+                padding: 10px 0;
+                text-align: center;
+                background-color: #6A706E;
+                margin-bottom: 10px;
+                list-style-type: none;
+            }
+    </style>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body onload="myfunction()">
+
+    <div id="container">
+
+        <div id="search">
+
+            <label for="searchInput">Find <i class="fa fa-search"></i>County</label>
+
+            <input id="searchInput" type="search" placeholder="Search" onclick="Search()">
+
+        </div>
+
+
+
+        <ul id="results">
+
+            <li class="county"><form action="/Home/Bedfordshire"><button>Bedfordshire</button></form></li>
+
+            <li class="county"><form action="/Home/Berkshire"><button>Berkshire</button></form></li>
+
+            <li class="county"><form action="/Home/Bristol"><button>Bristol</button></form></li>
+
+            <li class="county"><form action="/Home/Buckinghamshire"><button>Buckinghamshire</button></form></li>
+
+            <li class="county"><form action="/Home/Cambridgeshire"><button>Cambridgeshire</button></form></li>
+
+            <li class="county"><form action="/Home/Cheshire"><button>Cheshire</button></form></li>
+
+            <li class="county"><form action="/Home/Cornwall"><button>Cornwall</button></form></li>
+
+            <li class="county"><form action="/Home/Cumbria"><button>Cumbria</button></form></li>
+
+            <li class="county"><form action="/Home/Derbyshire"><button>Derbyshire</button></form></li>
+
+            <li class="county"><form action="/Home/Devon"><button>Devon</button></form></li>
+
+            <li class="county"><form action="/Home/Dorset"><button>Dorset</button></form></li>
+
+            <li class="county"><form action="/Home/Durham"><button>Durham</button></form></li>
+
+            <li class="county"><form action="/Home/EastSussex"><button>East Sussex</button></form></li>
+
+            <li class="county"><form action="/Home/Essex"><button>Essex</button></form></li>
+
+            <li class="county"><form action="/Home/Gloucestershire"><button>Gloucestershire</button></form></li>
+
+            <li class="county"><form action="/Home/GreaterLondon"><button>Greater London</button></form></li>
+
+            <li class="county"><form action="/Home/GreaterManchester"><button>Greater Manchester</button></form></li>
+
+            <li class="county"><form action="/Home/Hampshire"><button>Hampshire</button></form></li>
+
+            <li class="county"><form action="/Home/Herefordshire"><button>Herefordshire</button></form></li>
+
+            <li class="county"><form action="/Home/Hertfordshire"><button>Hertfordshire</button></form></li>
+
+            <li class="county"><form action="/Home/IsleOfWight"><button>Isle of Wight</button></form></li>
+
+            <li class="county"><form action="/Home/Kent"><button>Kent</button></form></li>
+
+            <li class="county"><form action="/Home/Lancashire"><button>Lancashire</button></form></li>
+
+            <li class="county"><form action="/Home/Leicestershire"><button>leicestershire</button></form></li>
+
+            <li class="county"><form action="/Home/Lincolnshire"><button>Lincolnshire</button></form></li>
+
+            <li class="county"><form action="/Home/CityOfLondon"><button>City of London</button></form></li>
+
+            <li class="county"><form action="/Home/Merseyside"><button>Merseyside</button></form></li>
+
+            <li class="county"><form action="/Home/Norfolk"><button>Norfolk</button></form></li>
+
+            <li class="county"><form action="/Home/Northamptonshire"><button>Northamptonshire</button></form></li>
+
+            <li class="county"><form action="/Home/Northumberland"><button>Northumberland</button></form></li>
+
+            <li class="county"><form action="/Home/NorthYorkshire"><button>North Yorkshire</button></form></li>
+
+            <li class="county"><form action="/Home/Nottinghamshire"><button>Nottinghamshire</button></form></li>
+
+            <li class="county"><form action="/Home/Oxfordshire"><button>Oxfordshire</button></form></li>
+
+            <li class="county"><form action="/Home/Rutland"><button>Rutland</button></form></li>
+
+            <li class="county"><form action="/Home/Shropshire"><button>Shropshire</button></form></li>
+
+            <li class="county"><form action="/Home/Somerset"><button>Somerset</button></form></li>
+
+            <li class="county"><form action="/Home/SouthYorkshire"><button>South Yorkshire</button></form></li>
+
+            <li class="county"><form action="/Home/Staffordshire"><button>Staffordshire</button></form></li>
+
+            <li class="county"><form action="/Home/Suffolk"><button>Suffolk</button></form></li>
+
+            <li class="county"><form action="/Home/Surrey"><button>Surrey</button></form></li>
+
+            <li class="county"><form action="/Home/TyneAndWear"><button>Tyne and Wear</button></form></li>
+
+            <li class="county"><form action="/Home/Warwickshire"><button>Warwickshire</button></form></li>
+
+            <li class="county"><form action="/Home/WestMidlands"><button>West Midlands</button></form></li>
+
+            <li class="county"><form action="/Home/WestSussex"><button>West Sussex</button></form></li>
+
+            <li class="county"><form action="/Home/WestYorkshire"><button>West Yorkshire</button></form></li>
+
+            <li class="county"><form action="/Home/Wiltshire"><button>Wiltshire</button></form></li>
+
+            <li class="county"><form action="/Home/Worcestershire"><button>Worcestershire</button></form></li>
+
+            <li class="county"><form action="/Home/Yorkshire"><button>Yorkshire</button></form></li>
+
+        </ul>
+
+
+
+    </div>
+
+    <script language="javascript" type="text/javascript" src="Search.js"></script>
+
+</body>
+
+</html>
+
